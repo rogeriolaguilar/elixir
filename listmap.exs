@@ -5,3 +5,8 @@ defmodule Listmap do
    Enum.map boolean_list, fn true -> 1; false -> 0 end 
   end
 end
+
+# Running:
+Listmap.binary([1,6,3,8,2,0], 5)
+|> inspect
+|> IO.puts
