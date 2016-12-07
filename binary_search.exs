@@ -4,15 +4,15 @@ defmodule Binarysearch do
     new_range(actual, range, middle(range))
   end
 
-  defp new_range(actual, range = min..max, middle) 
+  defp new_range(actual, _..max, middle) 
     when middle < actual,
     do: guess(actual, middle..max)
 
-  defp new_range(actual, range = min..max, middle) 
+  defp new_range(actual, min.._, middle) 
     when middle > actual, 
     do: guess(actual, min..middle)
 
-  defp new_range(actual, range, middle) 
+  defp new_range(actual, _, middle) 
     when actual == middle, 
     do: middle
   
@@ -23,4 +23,4 @@ defmodule Binarysearch do
   end
 end
 
-IO.puts Binarysearch.guess(100, 1..1000000000000)
+IO.puts Binarysearch.guess(273, 1..1000 )
