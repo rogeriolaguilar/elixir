@@ -1,9 +1,20 @@
-defmodule Mymap do
+defmodule MyMap do
+  @tall_people_height 1.75
 
-  def mapsum([], _function), do: 0
-  def mapsum([head | tail] , function), do: function.(head) + mapsum(tail, function)
-  
+  def tall_people(people) do
+    for person = %{ height: height } <- people, height >= @tall_people_height, do: person  
+  end
 end
 
-list = [1,3,4]
-IO.puts Mymap.mapsum(list, &(&1 * &1))
+#Run
+people = [
+  %{ name: "Chuck", last_name: "Norris", height: 1.78 },
+  %{ name: "Shakira", last_name: "Ripoll", height: 1.57 },
+  %{ name: "Bruno", last_name: "Mars", height: 1.65},
+  %{ name: "Santos", last_name: "Dumont", height: 1.52},
+  %{ name: "Rogério", last_name: "Aguilar", height: 1.75 }
+ ]
+
+
+MyMap.tall_people(people)
+|> IO.inspect
