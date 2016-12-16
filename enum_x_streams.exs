@@ -31,5 +31,5 @@ defmodule EnumXStreams do
 end
 
 #EnumXStreams.test Enum.to_list 1..99999
-EnumXStreams.testStrem Enum.to_list 1..99999
+EnumXStreams.testStream Enum.to_list 1..99999
 #EnumXStreams.longest_line '/usr/share/dict/words'
